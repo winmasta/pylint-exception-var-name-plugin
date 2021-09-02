@@ -23,7 +23,9 @@ jobs:
         python-version: 3.9
     - name: Install poetry
       run: |
-        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - &&
+        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+    - name: Export poetry path
+      run: |
         export PATH="$HOME/.poetry/bin:$PATH"
     - name: Install packages
       run: |
