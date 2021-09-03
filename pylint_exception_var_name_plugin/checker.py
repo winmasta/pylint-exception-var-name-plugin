@@ -11,7 +11,7 @@ class ExceptionVarNameChecker(BaseChecker):
         'C0001': (
             'Exception variable name does not match convention.',
             'bad-exception-var-name',
-            'Exception variable name must be same as defined in pylint config (file or command line).'
+            'Exception variable name must be same as defined in pylint config (file or command line). Default is `e`.'
         ),
     }
     options = (

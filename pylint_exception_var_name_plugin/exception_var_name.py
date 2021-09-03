@@ -1,4 +1,4 @@
-from plugin.checker import ExceptionVarNameChecker
+from pylint_exception_var_name_plugin.checker import ExceptionVarNameChecker
 
 
 def register(linter):
