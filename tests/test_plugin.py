@@ -1,7 +1,7 @@
 import astroid
 import pylint.testutils
 
-from plugin import checker
+from pylint_exception_var_name_plugin import checker
 
 
 class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
