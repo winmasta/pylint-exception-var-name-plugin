@@ -30,7 +30,8 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
             """
         )
 
-        self.checker.visit_excepthandler(node)
+        with self.assertNoMessages():
+            self.checker.visit_excepthandler(node)
 
     def test_finds_no_name(self):
         node = astroid.extract_node(
@@ -42,4 +43,5 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
             """
         )
 
-        self.checker.visit_excepthandler(node)
+        with self.assertNoMessages():
+            self.checker.visit_excepthandler(node)
