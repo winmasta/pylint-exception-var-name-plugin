@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pylint-exception-var-name-plugin"
-version = "0.1.1"
+version = "0.1.2"
 description = "Plugin for pylint which allows to define and check variable name for exception"
 authors = ["Konstantin Shestakov <winmasta@yandex.ru>"]
 license = "MIT"
