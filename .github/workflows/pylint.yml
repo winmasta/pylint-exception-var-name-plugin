@@ -29,7 +29,7 @@ jobs:
         $HOME/.poetry/bin/poetry config virtualenvs.create false && $HOME/.poetry/bin/poetry install
     - name: Analysing the code with pylint
       run: |
-        pylint plugin tests
+        pylint pylint_exception_var_name_plugin tests
 
     - name: Run tests
       run: |
