@@ -1,10 +1,10 @@
 import astroid
-import pylint.testutils
+from pylint.testutils import MessageTest, CheckerTestCase
 
 from pylint_exception_var_name_plugin import checker
 
 
-class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
+class TestUniqueReturnChecker(CheckerTestCase):
     CHECKER_CLASS = checker.ExceptionVarNameChecker
 
     def test_finds_bad_name(self):
@@ -17,7 +17,16 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
             """
         )
 
-        with self.assertAddsMessages(pylint.testutils.Message(msg_id='bad-exception-var-name', node=node)):
+        with self.assertAddsMessages(
+                MessageTest(
+                    msg_id='bad-exception-var-name',
+                    line=4,
+                    node=node,
+                    col_offset=0,
+                    end_line=5,
+                    end_col_offset=8,
+                ),
+        ):
             self.checker.visit_excepthandler(node)
 
     def test_not_finds_bad_name(self):
