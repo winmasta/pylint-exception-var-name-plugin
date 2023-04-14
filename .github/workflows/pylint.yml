@@ -26,7 +26,7 @@ jobs:
         curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
     - name: Install packages
       run: |
-        $HOME/.poetry/bin/poetry config virtualenvs.create false && $HOME/.poetry/bin/poetry install
+        $HOME/.local/bin/poetry config virtualenvs.create false && $HOME/.local/bin/poetry install
     - name: Analysing the code with pylint
       run: |
         pylint pylint_exception_var_name_plugin tests
