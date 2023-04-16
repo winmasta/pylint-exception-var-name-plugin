@@ -18,14 +18,14 @@ class TestUniqueReturnChecker(CheckerTestCase):
         )
 
         with self.assertAddsMessages(
-                MessageTest(
-                    msg_id="bad-exception-var-name",
-                    line=4,
-                    node=node,
-                    col_offset=0,
-                    end_line=5,
-                    end_col_offset=8,
-                ),
+            MessageTest(
+                msg_id="bad-exception-var-name",
+                line=4,
+                node=node,
+                col_offset=0,
+                end_line=5,
+                end_col_offset=8,
+            ),
         ):
             self.checker.visit_excepthandler(node)
 
