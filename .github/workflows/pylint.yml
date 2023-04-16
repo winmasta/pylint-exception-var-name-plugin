@@ -31,6 +31,10 @@ jobs:
       run: |
         $HOME/.local/bin/poetry config virtualenvs.create false && $HOME/.local/bin/poetry install --with test
 
+    - name: Analysing code formatting with black
+      run: |
+        black --check pylint_exception_var_name_plugin tests
+
     - name: Analysing the code with pylint
       run: |
         pylint pylint_exception_var_name_plugin tests

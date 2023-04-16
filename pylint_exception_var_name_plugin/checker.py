@@ -15,11 +15,18 @@ class ExceptionVarNameChecker(BaseChecker):
     options = (
         (
             "exception-var-name",
-            {"default": "e", "type": "string", "help": "Exception variable name after `as`"},
+            {
+                "default": "e",
+                "type": "string",
+                "help": "Exception variable name after `as`",
+            },
         ),
     )
 
-    def visit_excepthandler(self: "ExceptionVarNameChecker", node: ExceptHandler) -> None:
+    def visit_excepthandler(
+        self: "ExceptionVarNameChecker",
+        node: ExceptHandler,
+    ) -> None:
         if not node.name:
             return
 
