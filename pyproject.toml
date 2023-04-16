@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pylint-exception-var-name-plugin"
-version = "0.1.2"
+version = "0.1.3"
 description = "Plugin for pylint which allows to define and check variable name for exception"
 authors = ["Konstantin Shestakov <winmasta@yandex.ru>"]
 license = "MIT"
@@ -21,9 +21,18 @@ include = ["LICENSE"]
 python = "^3.9"
 pylint = "*"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
 pytest = "*"
+ruff = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+select = ["ALL"]
+ignore = ["D100", "D101", "D102", "D103", "D104", "D203", "D212"]
