@@ -7,14 +7,11 @@ pip install pylint-exception-var-name-plugin
 
 Usage:
 ```bash
-pylint --load-plugins exception_var_name FILES_TO_CHECK
+pylint --load-plugins pylint_exception_var_name_plugin FILES_TO_CHECK
 ```
 
-`ALLOWED_VAR_NAME` default is `e`. Can be set in command line:
+Add to `pylintrc` file to set `ALLOWED_VAR_NAME`:
 ```bash
-pylint --load-plugins exception_var_name ALLOWED_VAR_NAME FILES_TO_CHECK
-```
-or in pylint config file (`pylintrc`)
-```bash
+[VARIABLES]
 exception-var-name=ALLOWED_VAR_NAME
 ```
